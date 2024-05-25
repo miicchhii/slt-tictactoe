@@ -31,5 +31,11 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <!-- Other build configurations -->
+        <testSourceDirectory>src/test</testSourceDirectory>
+    </build>
+
 </project>
 
