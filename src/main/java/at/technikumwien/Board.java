@@ -2,29 +2,10 @@ package at.technikumwien;
 
 public class Board {
 
-    private int[][] cells = new int[3][3];
+    private char[][] cells = new char[3][3];
 
     Board(){
-        cells = new int[][]{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
-    }
-
-    public void drawGrid(){
-        for (int i = 0; i < cells.length; i++) {
-            for (int j = 0; j < cells[0].length; j++) {
-                System.out.print(cells[i][j]);
-            }
-            System.out.println();
-        }
-    }
-
-    public int setCell(int x, int y, int content){
-        //Check if content is valid, set cell value to content and return confirmation
-        if(content==1 || content ==2){
-            cells[x][y]=content;
-            return 0;
-        }else{
-            return 1;
-        }
+        cells = new char[][]{{' ',' ',' '}, {' ',' ',' '}, {' ',' ',' '}};
     }
 
     public boolean isCellEmpty(int x, int y) {
@@ -36,8 +17,29 @@ public class Board {
         }
     }
 
-    public void place(int x, int y, int content){
+    public void place(int x, int y, char marker){
+        //set cell value to content and return confirmation
+        cells[x][y]=marker;
+    }
 
+    public boolean isFull(){
+        return false;
+    }
+
+    public void clear(){
+
+    }
+
+    public void print(){
+        System.out.println("▁ ▁ ▁ ▁");
+        for (int i = 0; i < cells.length; i++) {
+            for (int j = 0; j < cells[0].length; j++) {
+                System.out.print("|"+cells[i][j]);
+            }
+            System.out.print("|");
+            System.out.println();
+        }
+        System.out.println("▔ ▔ ▔ ▔");
     }
 
 }
