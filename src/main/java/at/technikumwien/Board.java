@@ -33,7 +33,7 @@ public class Board {
     public void clear() {
         cells = new char[][]{{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
     }
-}
+
 
 public void print() {
     System.out.println("▁ ▁ ▁ ▁");
