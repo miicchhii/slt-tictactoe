@@ -9,6 +9,7 @@ public class TicTacToe {
     Player currentPlayer;
     Board board;
 
+    boolean gameover =false;
 
     TicTacToe() {
         this.player1 = new Player('X');
@@ -23,8 +24,7 @@ public class TicTacToe {
 
         int inputRow, inputCol;
 
-        while (!board.isFull() && !hasWinner()) {
-
+        while (true) {
 
             System.out.println("Current Player: " + currentPlayer.getMarker());
             board.print();
@@ -45,7 +45,23 @@ public class TicTacToe {
 
 
             board.place(inputRow, inputCol, currentPlayer.getMarker());
+
+            if(hasWinner()){
+                System.out.println("Current Player "+currentPlayer.getMarker()+" has won!");
+                gameover =true;
+            }else if(board.isFull()){
+                System.out.println("Game Over, nobody has won!");
+                gameover =true;
+            }
+
             switchCurrentPlayer();
+
+            if(gameover) {
+                do{
+                    System.out.println("To restart Game, enter 'n'");
+                }while(!(scanner.nextLine().equals("n")));
+                board.clear();
+            }
         }
 
     }
