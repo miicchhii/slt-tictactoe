@@ -9,7 +9,8 @@ public class TicTacToe {
     Player currentPlayer;
     Board board;
 
-    boolean gameover =false;
+    boolean gameover = false;
+    boolean quit = false;
 
     TicTacToe() {
         this.player1 = new Player('X');
@@ -24,7 +25,7 @@ public class TicTacToe {
 
         int inputRow, inputCol;
 
-        while (true) {
+        while (!quit) {
 
             System.out.println("Current Player: " + currentPlayer.getMarker());
             board.print();
@@ -57,9 +58,15 @@ public class TicTacToe {
             switchCurrentPlayer();
 
             if(gameover) {
-                do{
+                String input;
+                do {
                     System.out.println("To restart Game, enter 'n'");
-                }while(!(scanner.nextLine().equals("n")));
+                    System.out.println("To quit playing, enter 'q'");
+                    input = scanner.nextLine();
+                    if(input.equals("q")) {
+                        quit = true;
+                    }
+                } while (!(input.equals("n") || input.equals("q")));
                 board.clear();
             }
         }
