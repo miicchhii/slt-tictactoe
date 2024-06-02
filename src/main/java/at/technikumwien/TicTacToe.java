@@ -72,7 +72,30 @@ public class TicTacToe {
     }
 
     public boolean hasWinner() {
-        return false;
+
+    char[][] cells = board.getCells();
+
+    // Check rows and columns for a win
+        for (int i = 0; i < 3; i++) {
+        if (cells[i][0] != ' ' && cells[i][0] == cells[i][1] && cells[i][1] == cells[i][2]) {
+            return true;
+        }
+        if (cells[0][i] != ' ' && cells[0][i] == cells[1][i] && cells[1][i] == cells[2][i]) {
+            return true;
+        }
     }
+
+    // Check diagonals for a win
+        if (cells[0][0] != ' ' && cells[0][0] == cells[1][1] && cells[1][1] == cells[2][2]) {
+        return true;
+    }
+        if (cells[0][2] != ' ' && cells[0][2] == cells[1][1] && cells[1][1] == cells[2][0]) {
+        return true;
+    }
+
+        return false;
+}
+
+
 
 }
