@@ -8,6 +8,10 @@ public class Board {
         cells = new char[][]{{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
     }
 
+    public char[][] getCells() {
+        return cells;
+    }
+
     public boolean isCellEmpty(int x, int y) {
         //return whether cell is empty or not
         return cells[x][y] == ' ';
