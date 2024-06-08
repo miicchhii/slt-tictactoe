@@ -94,6 +94,10 @@ public class TicTacToe {
         } else currentPlayer = player1;
     }
 
+    public Board getBoard() {
+        return board;
+    }
+
     public boolean hasWinner() {
 
     char[][] cells = board.getCells();
