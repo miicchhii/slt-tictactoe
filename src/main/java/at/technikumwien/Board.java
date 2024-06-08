@@ -18,7 +18,7 @@ public class Board {
     }
 
     public void place(int x, int y, char marker) {
-        //set cell value to content and return confirmation
+        //set cell value to content
         cells[x][y] = marker;
     }
 
