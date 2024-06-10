@@ -20,21 +20,21 @@ public class BoardTest {
             for (int y = 0; y <= 2; y++) {
                 //Control
                 boolean result = board.isCellEmpty(x, y);
-                assertEquals(true, result);
+                assertTrue(result);
                 //Test
                 board.place(x, y, player1.getMarker());
                 result = board.isCellEmpty(x, y);
-                assertEquals(false, result);
+                assertFalse(result);
                 //Overwrite Test
                 board.place(x, y, player2.getMarker());
                 result = board.isCellEmpty(x, y);
-                assertEquals(false, result);
+                assertFalse(result);
                 //Test that the board is only full when last cell has been placed
                 result = board.isFull();
                 if (x == 2 && y == 2) {
-                    assertEquals(true, result);
+                    assertTrue(result);
                 } else {
-                    assertEquals(false, result);
+                    assertFalse(result);
                 }
             }
         }
@@ -45,7 +45,7 @@ public class BoardTest {
         for (int x = 0; x <= 2; x++) {
             for (int y = 0; y <= 2; y++) {
                 boolean result = board.isCellEmpty(x, y);
-                assertEquals(true, result);
+                assertTrue(result);
             }
         }
     }
