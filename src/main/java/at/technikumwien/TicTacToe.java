@@ -22,6 +22,7 @@ public class TicTacToe {
     public void start() {
         //board.print();
         Scanner scanner = new Scanner(System.in);
+        Scanner menueScanner = new Scanner(System.in);
 
         int inputRow, inputCol;
 
@@ -62,7 +63,7 @@ public class TicTacToe {
                 do {
                     System.out.println("To restart Game, enter 'n'");
                     System.out.println("To quit playing, enter 'q'");
-                    input = scanner.nextLine();
+                    input = menueScanner.nextLine();
                     if(input.equals("q")) {
                         quit = true;
                     }
