@@ -68,6 +68,7 @@ public class TicTacToe {
                     }
                 } while (!(input.equals("n") || input.equals("q")));
                 board.clear();
+                gameover=false;
             }
         }
 
