@@ -2,7 +2,7 @@ package at.technikumwien;
 
 import java.util.Scanner;
 
-public class TicTacToe {
+public class TicTacToe extends Board {
     Player player1;
     Player player2;
 
