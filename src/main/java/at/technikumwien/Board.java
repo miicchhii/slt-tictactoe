@@ -5,8 +5,16 @@ public class Board {
 
     private char[][] cells = new char[3][3];
 
+    private TicTacToePanel panel;
+
+    Board(TicTacToePanel panel) {
+        cells = new char[][]{{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
+        this.panel = panel;
+    }
+
     Board() {
         cells = new char[][]{{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
+        this.panel = null;
     }
 
     public char[][] getCells() {
@@ -21,6 +29,7 @@ public class Board {
     public void place(int x, int y, char marker) {
         //set cell value to content
         cells[x][y] = marker;
+        if(panel!=null) panel.repaint(); // Notify the panel to repaint
     }
 
     public boolean isFull() {
@@ -37,6 +46,7 @@ public class Board {
 
     public void clear() {
         cells = new char[][]{{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
+        if(panel!=null) panel.repaint(); // Notify the panel to repaint
     }
 
 

@@ -16,8 +16,9 @@ public class TicTacToe extends Board {
         this.player1 = new Player('X');
         this.player2 = new Player('O');
         this.currentPlayer = player1;
-        this.board = new Board();
+        this.board = this.getBoard();
     }
+
 
     public void start() {
         //board.print();
@@ -73,6 +74,7 @@ public class TicTacToe extends Board {
             }
         }
 
+
     }
 
     public boolean verifyInput(int inputRow, int inputCol) {
@@ -97,6 +99,13 @@ public class TicTacToe extends Board {
     }
 
     public Board getBoard() {
+        return board;
+    }
+
+    public Board getBoard(TicTacToePanel panel) {
+        if (board == null) {
+            board = new Board(panel);
+        }
         return board;
     }
 
