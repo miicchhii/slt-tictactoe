@@ -11,6 +11,7 @@ target/
 
 .idea/*
 
+*_history.xml
 *.iws
 *.iml
 *.ipr

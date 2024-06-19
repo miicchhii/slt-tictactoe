@@ -7,8 +7,9 @@ public class EndGameTest {
 
     @Test
     void testhasWinner(){
-        TicTacToe game;
-        game = new TicTacToe();
+
+        TicTacToe game = new TicTacToe();
+        TicTacToeWindow window = new TicTacToeWindow(game);
         Board board = game.getBoard();
 
         // Test horizontal win
